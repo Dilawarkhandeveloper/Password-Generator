@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate secure passwords with customizable options"
+    />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <header>
+          <h1>Password Generator</h1>
+          <p>Create strong, secure passwords instantly</p>
+        </header>
+
+        <div class="password-display">
+          <input
+            type="text"
+            id="passwordOutput"
+            readonly
+            placeholder="Click generate to create password"
+          />
+          <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="strength-indicator">
+          <span class="strength-text">Password Strength:</span>
+          <div class="strength-bars">
+            <span class="strength-bar"></span>
+            <span class="strength-bar"></span>
+            <span class="strength-bar"></span>
+          </div>
+          <span class="strength-label" id="strengthLabel">-</span>
+        </div>
+
+        <div class="form-group">
+          <label for="lengthSlider"
+            >Password Length: <span id="lengthValue">16</span></label
+          >
+          <input
+            type="range"
+            id="lengthSlider"
+            min="8"
+            max="50"
+            value="16"
+            class="slider"
+          />
+        </div>
+
+        <div class="options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="uppercase" checked />
+            <span class="checkmark"></span>
+            <span class="label-text">Uppercase Letters (A-Z)</span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="lowercase" checked />
+            <span class="checkmark"></span>
+            <span class="label-text">Lowercase Letters (a-z)</span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="numbers" checked />
+            <span class="checkmark"></span>
+            <span class="label-text">Numbers (0-9)</span>
+          </label>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="symbols" checked />
+            <span class="checkmark"></span>
+            <span class="label-text">Symbols (!@#$%^&*)</span>
+          </label>
+        </div>
+
+        <button id="generateBtn" class="generate-btn">Generate Password</button>
+
+        <div class="copy-feedback" id="copyFeedback">
+          Password copied to clipboard!
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

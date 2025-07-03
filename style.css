@@ -1,0 +1,411 @@
+/* CSS Variables */
+:root {
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text: #333333;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  padding: 20px;
+}
+
+/* Container and Card */
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px var(--shadow);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Password Display */
+.password-display {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#passwordOutput {
+  width: 100%;
+  padding: 16px 50px 16px 16px;
+  font-size: 18px;
+  font-family: "Courier New", monospace;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #f8f9fa;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+#passwordOutput:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.copy-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Strength Indicator */
+.strength-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.strength-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.strength-bar {
+  height: 6px;
+  width: 100%;
+  background: var(--border);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.strength-label {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Strength States */
+.strength-weak .strength-bar:nth-child(1) {
+  background: var(--danger);
+}
+
+.strength-weak .strength-label {
+  color: var(--danger);
+}
+
+.strength-medium .strength-bar:nth-child(1),
+.strength-medium .strength-bar:nth-child(2) {
+  background: var(--warning);
+}
+
+.strength-medium .strength-label {
+  color: var(--warning);
+}
+
+.strength-strong .strength-bar {
+  background: var(--success);
+}
+
+.strength-strong .strength-label {
+  color: var(--success);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+#lengthValue {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--secondary);
+  transform: scale(1.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--secondary);
+  transform: scale(1.2);
+}
+
+/* Checkboxes */
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.checkbox-container:hover {
+  background: #f8f9fa;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.label-text {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Generate Button */
+.generate-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+/* Copy Feedback */
+.copy-feedback {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--success);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.copy-feedback.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  #passwordOutput {
+    font-size: 16px;
+  }
+
+  .generate-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .strength-indicator {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .strength-text {
+    width: 100%;
+  }
+
+  .copy-feedback {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
