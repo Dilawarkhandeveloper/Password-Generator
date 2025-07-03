@@ -46,9 +46,7 @@ Did you know that **80% of data breaches happen because of weak passwords?** Mos
 
 1. **Clone the repository:**
 
-   ```bash
    git clone https://github.com/Dilawarkhandeveloper/Password-Generator.git
-````
 
 2. **Open the project folder in VS Code or your editor of choice.**
 
