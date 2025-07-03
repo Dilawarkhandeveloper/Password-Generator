@@ -2,7 +2,8 @@
 
 Welcome to the **Password Generator Web Application**, a professional-grade tool built with **HTML, CSS, JavaScript**, and **Claude AI**. This project helps you create **secure, customizable passwords** in seconds, featuring real-time strength indicators, beautiful responsive design, and smooth user interactions.
 
-> 🎥 **Full YouTube Tutorial:** [Watch on YouTube] (https://youtu.be/dOBJCfmcXfM?si=AjtiZI8feQqqOLb9)
+> 🎥 **Full YouTube Tutorial:** [Watch on YouTube](https://www.youtube.com/watch?v=dOBJCfmcXfM)
+
 
 ---
 
