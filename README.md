@@ -32,10 +32,11 @@ Did you know that **80% of data breaches happen because of weak passwords?** Mos
 
 *Main interface with all options*
 
-![image](https://github.com/user-attachments/assets/9608a76e-b3fb-4c95-8a31-85f5c4ae6569)
+![Overview](https://github.com/user-attachments/assets/851734a2-2ec5-4992-85e3-92ec9fbc1dc0)
 
 *Real-time strength feedback*
 
+![image](https://github.com/user-attachments/assets/9608a76e-b3fb-4c95-8a31-85f5c4ae6569)
 
  *Mobile-friendly layout*
 
